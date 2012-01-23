@@ -1,0 +1,25 @@
+Name:           ApplePush
+Version:        0.1
+
+Cabal-Version:  >= 1.2
+Author:         Jonathan Fischoff <jonathangfischoff@gmail.com>
+Maintainer:     Jonathan Fischoff <jonathangfischoff@gmail.com>
+Synopsis:       Library for Apple Push Notification Service and Apple Push Feedback Service
+Category:       Network
+license:	BSD3
+license-file:	LICENSE
+Build-Type:     Simple
+Description:    This library provides an API for send push notifications through a secure socket, and receiving feedback on their delivery. Due to a limitation in HsOpenSSL, your private key cannot have a passphrase.
+                
+library
+    build-depends:      base >= 4 && < 5, bytestring >= 0.9,
+                        binary >= 0.5, mtl, network, json >= 0.4
+    exposed-modules:    ApplePush, ApplePush.Types, ApplePush.Notification, ApplePush.Helpers
+    hs-source-dirs:     src
+    
+Executable applepushtest
+    Build-Depends:      base
+    other-modules:      ApplePush
+    Main-Is:            Main.hs
+    ghc-options:        -threaded
+    Hs-Source-Dirs:     src

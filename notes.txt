@@ -1,0 +1,64 @@
+so I have this one idea
+that everything is just 
+
+start input output config 
+
+so what is the input and what is the output?
+
+first there is just a function that converts a message object to json
+
+message -> json and inverse
+json -> bytestring and inverse
+
+okay so the process goes from a chan bytestring to a secure socket. 
+the config includes 
+    cert
+    private key
+    host
+    port
+    
+wait I think I can do something here
+this should return the write function    
+    
+the other process is the feedback process
+
+the input is secure socket and the output is the chan bytestring 
+the config is the same
+    cert
+    private key
+    host 
+    port
+
+
+everything happens in reverse
+
+Here is my new idea. 
+
+calling start on the thread
+
+start config
+
+returns a structure that has bound methods to the input and output channels 
+
+the bound methods return futures
+
+Result is an error either
+
+start :: Config ->  Result (RequestStructure, StartResponse)
+
+RequestsStructure
+{
+    send_notification :: IO Notification -> IO Response,
+}
+
+
+
+
+
+
+
+
+
+
+
+
