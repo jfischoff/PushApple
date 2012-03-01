@@ -28,6 +28,12 @@
 *.sql
 *.sqlite
 
+#keys
+*.pem
+*.cer
+*.pem~
+*.p12
+
 # OS generated files #
 ######################
 .DS_Store*

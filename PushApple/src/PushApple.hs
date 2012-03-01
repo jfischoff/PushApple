@@ -1,17 +1,17 @@
-module PushApple.PushApple (
+module PushApple (
     PushFunctions,
     connectToService,
-    module ApplePush2.Types,
-    module ApplePush2.Service,
+    module PushApple.Types,
+    module PushApple.Service,
     send_notification,
     connect_push_sandbox,
     connect_push_production,
     get_sandbox_feedback,
     get_production_feedback
 ) where
-import ApplePush2.Service   
-import ApplePush2.Types     
-import ApplePush2.Instances 
+import PushApple.Service   
+import PushApple.Types     
+import PushApple.Instances 
 import qualified Data.Binary as B          
 import qualified OpenSSL.Session as SSL
 import qualified Data.ByteString as BS
@@ -32,6 +32,8 @@ data PushFunctions = PushFunctions
     {
         send_notification :: (Payload -> IO ())
     }
+    
+    
     
 connectToService :: SSLServerConfig -> IO (Either PushFunctions SSLConfigError)
 connectToService config = do
